@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify</title>
+    <link rel="stylesheet" href="../css/verify.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <div class="otp-container">
+      <!-- <i class='bx bx-x close-btn'></i> -->
+      <header>Nhập mã OTP</header>
+      <p>Vui lòng kiểm tra số điện thoại +84 xx xxx xx xx để đăng nhập</p>
+
+      <div class="otp-input">
+        <input
+          type="text"
+          maxlength="1"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          oninput="filterInput(this); moveNext(this, 'otp2');"
+          id="otp1"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          oninput="filterInput(this); moveNext(this, 'otp3');"
+          id="otp2"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          oninput="filterInput(this); moveNext(this, 'otp4');"
+          id="otp3"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          oninput="filterInput(this); moveNext(this, 'otp5');"
+          id="otp4"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          oninput="filterInput(this); moveNext(this, 'otp6');"
+          id="otp5"
+        />
+        <input
+          type="text"
+          maxlength="1"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          oninput="filterInput(this);"
+          id="otp6"
+        />
+      </div>
+
+      <div class="resend-timer">
+        <span class="resend-link">Gửi lại mã OTP</span>
+      </div>
+
+      <button class="continue-btn" onclick="submitOTP()">Tiếp tục</button>
+    </div>
+
+    <script>
+      function moveNext(current, nextFieldID) {
+        if (current.value.length >= 1) {
+          document.getElementById(nextFieldID)?.focus();
+        }
+      }
+
+      function filterInput(input) {
+        // Allow only numbers in the input
+        input.value = input.value.replace(/[^0-9]/g, "");
+      }
+    </script>
+  </body>
+</html>
