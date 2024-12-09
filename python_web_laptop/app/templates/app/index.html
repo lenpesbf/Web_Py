@@ -81,13 +81,15 @@
                       <div class="setting ht-setting">
                         <ul class="ht-setting-list">
                           <li>
-                            <a href="./view/login-register.html"
+                            <a href="#"
                               >Tài Khoản Của Tôi</a
                             >
                           </li>
-                          <li><a href="./view/payment.html">Thanh Toán</a></li>
                           <li>
-                            <a href="./view/login-register.html">Đăng Ký</a>
+                            <a href="{% url 'payment' %}">Thanh Toán</a>
+                          </li>
+                          <li>
+                            <a href="{% url 'login' %}">Đăng Ký</a>
                           </li>
                         </ul>
                       </div>

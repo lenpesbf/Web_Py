@@ -1558,6 +1558,14 @@ textarea:focus {
   z-index: 9;
   display: none;
 }
+
+.ht-setting-trigger:hover + .ht-setting {
+  display: block; /* Hiển thị menu con khi hover vào trigger */
+}
+.ht-setting:hover {
+  display: block; /* Đảm bảo không ẩn khi hover vào menu */
+}
+
 .setting,
 .currency,
 .language {
